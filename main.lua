@@ -1,6 +1,8 @@
-package.path = string.gsub(arg[0], "main.lua" , "") .. "?.lua;";
+script_path = string.gsub(arg[0], "main.lua", "") 
 
-help = require("help")
+package.path = package.path .. ";" .. script_path .. "lua/?.lua;"
+
+help = require("helper.help")
 
 local internal = false
 for i = 1, #arg, 1 do
